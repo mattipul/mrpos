@@ -1,4 +1,10 @@
+.global init
 .extern kernel_main
-.globl _start
-_start:
-	bl kernel_main                                                                                                                                                                                                	                                            
+
+init:        
+        mov sp, #0x80000
+        bl kernel_main
+
+        b hang$
+hang$:
+        b hang$
