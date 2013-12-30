@@ -37,7 +37,6 @@ echo "Mounting IMG..."
 losetup -o $((63*512)) /dev/loop1 $OUTPUTDIR$OUTPUT.img
 mkfs.msdos -F 32 /dev/loop1
 losetup -d /dev/loop1
-mount -o loop,offset=$((63*512)) $OUTPUTDIR$OUTPUT.img /media/sdcard
 
 echo ""
 echo "Finished BUILDING IMAGE"
