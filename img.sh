@@ -1,9 +1,9 @@
 #!/bin/sh
 
 OUTPUT=rpi-image
-OUTPUTDIR=../
+OUTPUTDIR=
 OUTPUTSIZEmb=34
-BOOTDIR=../image
+BOOTDIR=./image
 
 # Do some math based on the output size.
 OUTPUTSIZEb=$(( $OUTPUTSIZEmb * 1024 * 1024 ))
@@ -30,8 +30,8 @@ w
 EOF
 
 # Setup permissions
-chown joshcole $OUTPUTDIR$OUTPUT.img
-chown joshcole $BOOTDIR/*
+chown mattipul $OUTPUTDIR$OUTPUT.img
+chown mattipul $BOOTDIR/*
 
 echo "Mounting IMG..."
 losetup -o $((63*512)) /dev/loop1 $OUTPUTDIR$OUTPUT.img
